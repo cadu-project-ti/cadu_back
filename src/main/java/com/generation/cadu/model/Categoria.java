@@ -25,10 +25,10 @@ public class Categoria {
 	
 	@NotNull(message = "O atributo tipo é obrigatório!")
 	@Size(min = 0, max = 255, message = "O atributo tipo deve conter no mínimo 5 e no máximo 255 caracteres")
-	private String tipo;
+	private String descricao;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "categoria", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties("tipo")
+	@JsonIgnoreProperties("descricao")
 	private List<Produto> produto;
 
 	public Long getId() {
@@ -39,12 +39,12 @@ public class Categoria {
 		this.id = id;
 	}
 
-	public String getTipo() {
-		return tipo;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public List<Produto> getProduto() {

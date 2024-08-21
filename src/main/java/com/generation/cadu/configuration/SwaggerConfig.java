@@ -26,9 +26,7 @@ public class SwaggerConfig {
 								+ "João Pedro Guimarães - joaopedro.jusus@gmail.com<br>"
 								+ "Yanca Dantas - yanca.d@live.com<br>" 
 								+ "Felipe Porto - fe2017li@gmail.com<br>" 
-								+ "Isabelly Dornelas - isabelly.dornelas123@gmail.com<br>"
-								+ "Will Belcari - willbelcari13@gmail.com<br>"
-								+ "Gustavo Oliveira - gustavo.oliver456@gmail.com")
+								+ "Isabelly Dornelas - isabelly.dornelas123@gmail.com<br>")
 						.version("v0.0.1")
 						.license(new License()
 								.name("Generation Brasil")

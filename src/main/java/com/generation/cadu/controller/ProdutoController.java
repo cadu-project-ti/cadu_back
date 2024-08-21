@@ -53,7 +53,7 @@ public class ProdutoController {
 		
 	}
 	
-	@PostMapping("/cadastrar")
+	@PostMapping
 	public ResponseEntity<Produto> post(@Valid @RequestBody Produto produto) {
 		if (categoriaRepository.existsById(produto.getCategoria().getId())) {
 			return ResponseEntity.status(HttpStatus.CREATED).body(produtoRepository.save(produto));
@@ -61,7 +61,7 @@ public class ProdutoController {
 		throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "A categoria não existe!!!", null);
 	}
 	
-	@PutMapping("/atualizar")
+	@PutMapping
 	public ResponseEntity<Produto> put(@Valid @RequestBody Produto produto) {
 		if (produtoRepository.existsById(produto.getId())) {
 			if (categoriaRepository.existsById(produto.getCategoria().getId())) {

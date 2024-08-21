@@ -41,18 +41,18 @@ public class CategoriaController {
 				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 		}
 	
-	@GetMapping("/tipo/{tipo}")
-	public ResponseEntity<List<Categoria>> getByTipo(@PathVariable String tipo) {
-		return ResponseEntity.ok(categoriaRepository.findAllByTipoContainingIgnoreCase(tipo));
+	@GetMapping("/descricao/{descricao}")
+	public ResponseEntity<List<Categoria>> getByDescricao(@PathVariable String tipo) {
+		return ResponseEntity.ok(categoriaRepository.findAllByDescricaoContainingIgnoreCase(tipo));
 		}
 	
-	@PostMapping("/cadastrar")
+	@PostMapping
 	public ResponseEntity<Categoria> post(@Valid @RequestBody Categoria categoria) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(categoriaRepository.save(categoria));
 		
 	}
 	
-	@PutMapping("/atualizar")
+	@PutMapping
 	public ResponseEntity<Categoria> put(@Valid @RequestBody Categoria categoria) {
 		return categoriaRepository.findById(categoria.getId()).map(resposta -> ResponseEntity
 				.status(HttpStatus.CREATED).body(categoriaRepository.save(categoria)))
